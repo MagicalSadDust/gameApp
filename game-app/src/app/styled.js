@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'VAG World';
     font-display: swap;
-    src: url('../../public/vag-world-bold.woff2') format('woff2');
+    src: url('/vag-world-bold.woff2') format('woff2');
   }
 
   * {
