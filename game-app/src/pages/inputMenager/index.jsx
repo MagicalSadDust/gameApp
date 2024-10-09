@@ -134,9 +134,10 @@ const InputMenager = ({ level = [] }) => {
 
       if (Math.sqrt((x - pointX) ** 2 + (y - pointY) ** 2) < 40) {
         const newPoint = { x: pointX, y: pointY, letter: letters[i] }
-        console.log('selectedPointLetters', newPoint, selectedPointLetters);
         if (isObjectNotInArray(newPoint, selectedPointLetters)) {
           setSelectedPointLetters(prev => [...prev, newPoint])
+        } else {
+          setSelectedPointLetters(prev => prev.filter(point => point.letter !== newPoint.letter))
         }
         break
       }
