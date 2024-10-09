@@ -34,3 +34,11 @@ export const getMinimalLetterSet = (words) => {
 export const removeWord = (array, wordToRemove) => {
   return array.filter(word => word !== wordToRemove);
 }
+
+export const isObjectNotInArray = (obj, arr) => {
+  return !arr.some(item => 
+    item.x === obj.x && 
+    item.y === obj.y && 
+    item.letter === obj.letter
+  );
+}

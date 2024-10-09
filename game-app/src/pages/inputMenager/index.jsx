@@ -2,7 +2,7 @@ import { memo, useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { setSolvedWords } from '../../store/reducers//levelSlice';
-import { getMinimalLetterSet, removeWord } from '../../shared/model/extensions';
+import { getMinimalLetterSet, removeWord, isObjectNotInArray } from '../../shared/model/extensions';
 import { Container, Letters, InputLetter } from './styled';
 
 const InputMenager = ({ level = [] }) => {
@@ -134,7 +134,10 @@ const InputMenager = ({ level = [] }) => {
 
       if (Math.sqrt((x - pointX) ** 2 + (y - pointY) ** 2) < 40) {
         const newPoint = { x: pointX, y: pointY, letter: letters[i] }
-        setSelectedPointLetters(prev => [...prev, newPoint])
+        console.log('selectedPointLetters', newPoint, selectedPointLetters);
+        if (isObjectNotInArray(newPoint, selectedPointLetters)) {
+          setSelectedPointLetters(prev => [...prev, newPoint])
+        }
         break
       }
     }
