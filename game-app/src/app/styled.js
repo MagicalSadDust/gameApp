@@ -27,9 +27,9 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'VAG World';
   }
 
-  @media (max-width: 450px), (max-height: 800px) {
+  @media (max-width: 450px), (max-height: 950px) {
     html {
-      font-size: 20px;
+      font-size: 18px;
     }
   }
 
