@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const TitleComponent = styled.h1`
     font-size: 1rem;
     margin: 0px 0px 57px 0px;
+    
+    @media (max-width: 450px) {
+        margin: 0px 0px 10px 0px;
+    }
 `;
 
 export const ModalComponent = styled.div`

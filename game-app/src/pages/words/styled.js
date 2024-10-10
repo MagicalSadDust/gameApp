@@ -41,4 +41,10 @@ export const CellContainer = styled.div`
     &:last-child {
         margin-left: 3px;
     }
+
+    @media (max-width: 450px) {
+        width: 1.8rem;
+        height: 1.8rem;
+        font-size: 1rem;
+    }
 `;

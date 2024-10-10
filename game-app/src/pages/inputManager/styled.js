@@ -7,6 +7,10 @@ export const Container = styled.div`
     justify-content: center;
     flex-direction: column;
     color: #4D4D4D;
+    
+    @media (max-width: 450px) {
+        margin-top: 15px;
+    }
 `; 
 
 export const Letters = styled.div`
@@ -14,6 +18,10 @@ export const Letters = styled.div`
     justify-content: center;
     margin-bottom: 38px;
     height: 42px;
+
+    @media (max-width: 450px) {
+        margin-bottom: 0px;
+    }
 `;
 
 export const InputLetter = styled.div`
@@ -38,5 +46,11 @@ export const InputLetter = styled.div`
     }
     &:last-child {
         margin-left: 2px;
+    }
+
+    @media (max-width: 450px) {
+        width: 1.8rem;
+        height: 1.8rem;
+        font-size: 1.6rem;
     }
 `;
