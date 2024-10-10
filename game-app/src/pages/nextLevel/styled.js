@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 const textStyle = css`
-    font-family: VAG World;
+    font-family: 'VAG World';
     font-weight: 700;
     text-align: center;
     margin: 0px;

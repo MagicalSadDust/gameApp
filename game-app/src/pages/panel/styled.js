@@ -16,17 +16,6 @@ export const Container = styled.div`
 
     @media (max-width: 450px) {
         width: 100%;
+        height: 100vh;
     }
 `; 
-
-export const ModalWindow = styled.div`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 10px;
-    text-align: center;
-    width: 83%;
-    height: 428px;
-`;
