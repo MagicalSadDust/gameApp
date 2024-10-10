@@ -43,8 +43,8 @@ export const CellContainer = styled.div`
     }
 
     @media (max-width: 450px) {
-        width: 1.8rem;
-        height: 1.8rem;
-        font-size: 1rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.4rem;
     }
 `;

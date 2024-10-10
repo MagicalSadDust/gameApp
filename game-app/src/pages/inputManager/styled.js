@@ -51,6 +51,6 @@ export const InputLetter = styled.div`
     @media (max-width: 450px) {
         width: 1.8rem;
         height: 1.8rem;
-        font-size: 1.6rem;
+        font-size: 1.9rem;
     }
 `;

@@ -15,7 +15,7 @@ export const Container = styled.div`
     box-shadow: 0px 0px 15px 3px black;
 
     @media (max-width: 450px) {
-        width: 100%;
+        width: 100vw;
         height: 100vh;
     }
 `; 

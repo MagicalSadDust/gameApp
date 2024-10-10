@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import PropTypes from 'prop-types';
+import useViewport from 'Model/useViewport';
 import { Container, Letters, InputLetter } from './styled';
 import useInputManager from './useInputManager';
 
@@ -10,6 +11,8 @@ const InputManager = ({ level = [] }) => {
     handleCanvasClick
   } = useInputManager(level);
 
+  const { width, height } = useViewport();
+  
   return (
     <Container>
       <Letters>
@@ -19,8 +22,8 @@ const InputManager = ({ level = [] }) => {
       </Letters>
       <canvas
         ref={canvasRef}
-        width={357}
-        height={371}
+        width={width < 450 ? 290 : 357}
+        height={height < 933 ? 304 : 371}
         onClick={handleCanvasClick}
       />
     </Container>
