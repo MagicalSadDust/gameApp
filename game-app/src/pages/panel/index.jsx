@@ -1,17 +1,21 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import Title from '../../shared/ui/title';
-import WordsComponent from '../words';
-import InputMenager from '../inputMenager';
-import { Container } from './styled';
+import useTabManager from 'Model/useTabManager';
+import ModalWindow from 'UI/modalWindow';
+import Title from 'UI/title';
 import { steps } from '../../shared/config/data';
+import InputMenager from '../inputManager';
+import WordsComponent from '../words';
 import NextLevel from '../nextLevel';
+import { Container } from './styled';
 
 const Panel = () => {
   const [isNextLevel, setIsNextLevel] = useState(false);
   const [currentLevel, setCurrentLevel] = useState(() => {
     return Number(localStorage.getItem('currentLevel')) || 1;
   });
+
+  const isOutdated = useTabManager();
 
   useEffect(() => {
     const storedLevel = Number(localStorage.getItem('currentLevel')) || 1;
@@ -30,10 +34,9 @@ const Panel = () => {
   }, [level.length, solvedWords.length, currentLevel]);
 
   const handleButtonClick = useCallback(() => {
-    console.log('handleButtonClick');
-    
     setIsNextLevel(false);
   }, [])
+
 
   if (isNextLevel) return (
     <Container>
@@ -44,6 +47,7 @@ const Panel = () => {
         onSetCurrentLevel={setCurrentLevel}
         onButtonClick={handleButtonClick}
       />
+      {isOutdated && <ModalWindow />}
     </Container>
   )
   
@@ -52,6 +56,7 @@ const Panel = () => {
       <Title />
       <WordsComponent currentLevel={currentLevel} level={level} solvedWords={solvedWords}/>
       <InputMenager currentLevel={currentLevel} level={level}/>
+      {isOutdated && <ModalWindow />}
     </Container>
   );
 };

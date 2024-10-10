@@ -25,12 +25,15 @@ const solvedWordsSlice = createSlice({
     resetSolvedWords: (state) => {
       state.solvedWords = [];
     },
+    setStoredWords: (state, action) => {
+      state.solvedWords = action.payload;
+    } 
   },
 });
 
 
 export const { setJsonFiles } = levelSlice.actions;
-export const { setSolvedWords, resetSolvedWords } = solvedWordsSlice.actions;
+export const { setSolvedWords, resetSolvedWords, setStoredWords } = solvedWordsSlice.actions;
 
 
 const rootReducer = combineReducers({

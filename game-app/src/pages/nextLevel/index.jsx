@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { resetSolvedWords } from '../../store/reducers/levelSlice';
+import { resetSolvedWords } from 'Store/reducers/levelSlice';
 import { Container, Button, Title, Subtitle } from './styled'
 
 const NextLevel = (props) => {

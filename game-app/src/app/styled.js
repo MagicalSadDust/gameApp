@@ -11,6 +11,12 @@ export const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  html {
+    font-size: 30px;
   }
 
   body {
@@ -19,6 +25,12 @@ export const GlobalStyle = createGlobalStyle`
     justify-content: center; 
     background-color: #202432;
     font-family: 'VAG World';
+  }
+
+  @media (max-width: 450px), (max-height: 800px) {
+    html {
+      font-size: 20px;
+    }
   }
 
 `;

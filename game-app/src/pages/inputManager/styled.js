@@ -27,6 +27,7 @@ export const InputLetter = styled.div`
     justify-content: center;
     align-items: flex-end;
     border-radius: 30%;
+    user-select: none;
     cursor: default;
 
     &:not(:last-child, :first-child) {
